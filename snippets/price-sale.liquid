@@ -1,0 +1,28 @@
+{% comment %}
+  Unless this store uses multiple currencies,
+  we will wrap the cents in a sup (superscript) element,
+  to hide them with CSS.
+
+  `compare-price` and `product-price` are both definted before this snippet is
+  included
+{% endcomment %}
+
+{% capture saved_amount %}{{ compare_price | minus: product_price | money }}{% endcapture %}
+
+{% unless shop.money_format contains 'money' %}
+  {% if shop.money_format contains '{{amount}}' %}
+    {% capture saved_amount %}{{ saved_amount | replace: '.','<sup>' }}</sup>{% endcapture %}
+  {% elsif shop.money_format contains '{{amount_with_comma_separator}}' %}
+    {% capture saved_amount %}{{ saved_amount | replace: ',','<sup>' }}</sup>{% endcapture %}
+  {% endif %}
+{% endunless %}
+
+{% assign saved_amount = saved_amount | strip %}
+<p>{{ 'products.general.save_html' | t: saved_amount: saved_amount }}</p>
+
+{% comment %}
+{% if compare_price > product_price %}
+  {% assign saved_amount = compare_price | minus: product_price | times: 100 | divided_by: compare_price | round %}
+  <p>{{ 'products.general.save_html' | t: saved_amount: saved_amount }}%</p>
+{% endif %}
+{% endcomment %}
