@@ -7,7 +7,7 @@
 {% if collection.image %}
   </div><!-- //wrapper -->
   <div class="collection-hero">
-    <div class="collection-hero__image" style="background-image: url({{ collection.image | collection_img_url: '1024x1024' }});"></div>
+    <div class="collection-hero__image" style="background-image: url({{ collection.image | collection_img_url: 'master' }});"></div>
   </div>
 {% endif %}
 
