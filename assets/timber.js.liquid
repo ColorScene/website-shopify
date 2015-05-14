@@ -255,7 +255,7 @@ timber.productPage = function (options) {
     // To only show available variants, implement linked product options:
     //   - http://docs.shopify.com/manual/configuration/store-customization/advanced-navigation/linked-product-options
     $addToCart.addClass('disabled').prop('disabled', true);
-    $addToCartText.html({{ 'products.product.unavailable' | t | json }});
+    $addToCartText.html("Coming Soon");
     $quantityElements.hide();
   }
 };

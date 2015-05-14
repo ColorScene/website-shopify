@@ -89,12 +89,22 @@
               <input type="number" hidden="hidden" id="Quantity" name="quantity" value="1" min="1" class="js-quantity-selector">
             </div>
             {% endcomment %}
-
+			
+			{% if variant.available %}
             <div class="product-single__add-to-cart">
               <button type="submit" name="add" id="AddToCart" class="btn">
                 <span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span>
               </button>
             </div>
+			{% else %}
+            <div class="product-single__add-to-cart">
+              <button type="submit" name="add" id="AddToCart" class="btn">
+                <span id="AddToCartText">Coming Soon</span>
+              </button>
+            </div>
+			{% endif %}
+			
+			
           </form>
 
         </div>
