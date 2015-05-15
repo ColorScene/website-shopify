@@ -28,7 +28,7 @@
       {% capture collection_image_url %}{{ collections[collection_handle].products.first.featured_image | img_url: 'grande' }}{% endcapture %}
     {% endif %}
 
-    <div class="collection-grid__item-overlay grid__image" style="background-image: url({{ collection | img_url: 'master' }})">
+    <div class="collection-grid__item-overlay grid__image" style="background-image: url({{ collection_image_url }})">
     </div>
 
     <div class="collection-grid__item-title--wrapper">
