@@ -16,7 +16,7 @@
           Display current variant image, or default first
         {% endcomment %}
         <div class="product-single__photo-wrapper">
-          <img class="product-single__photo" id="ProductPhotoImg" src="{{ featured_image | img_url: 'large' }}" srcset="{{ featured_image | img_url: '1024x1024' }} 2x" {% if settings.product_zoom_enable %}data-mfp-src="{{ featured_image | img_url: 'master' }}"{% endif %} alt="{{ featured_image.alt | escape }}">
+          <img class="product-single__photo" id="ProductPhotoImg" src="{{ featured_image | img_url: 'large' }}" srcset="{{ featured_image | img_url: '1024x1024' }} 2x" {% if settings.product_zoom_enable %}data-mfp-src="{{ featured_image | img_url: '2048x2048' }}"{% endif %} alt="{{ featured_image.alt | escape }}">
         </div>
 
          {% comment %}

@@ -95,6 +95,7 @@ theme.init = function () {
   theme.cache.$window.on('resize', theme.debounce(theme.resizeLogo, 150));
   theme.cache.$window.on('resize', theme.debounce(theme.initStickyProductMeta, 150));
 
+
 };
 
 theme.collectionBackButton = function () {
@@ -235,6 +236,7 @@ theme.checkoutIndicator = function () {
 };
 
 theme.productImageZoom = function() {
+	
   if (!theme.cache.$productImagePhoto.length || theme.variables.bpSmall) {
     return;
   };
@@ -247,6 +249,17 @@ theme.productImageZoom = function() {
     closeOnContentClick: true,
     tClose: '{{ "products.zoom.close" | t }}',
     removalDelay: 500,
+	  retina: {
+	      ratio: function() { return window.devicePixelRatio === 1.5 ? 1.5 : 2  }, // Increase this number to enable retina image support.
+	      // Image in popup will be scaled down by this number.
+	      // Option can also be a function which should return a number (in case you support multiple ratios). For example:
+	      // ratio: function() { return window.devicePixelRatio === 1.5 ? 1.5 : 2  }
+    
+
+	      replaceSrc: function(item, ratio) {
+	        return item.src.replace(/\.\w+$/, function(m) { return '@2x' + m; });
+	      } // function that changes image source
+	    },
     gallery: {
       enabled:true,
       navigateByImgClick: false,
@@ -255,6 +268,7 @@ theme.productImageZoom = function() {
       tNext: '{{ "products.zoom.next" | t }}'
     }
   });
+  
 };
 
 theme.collectionParallax = function () {
@@ -473,3 +487,4 @@ theme.debounce = function(n,t,u){var e;return function(){var a=this,r=arguments,
 
 // Initialize theme's JS on docready
 $(theme.init);
+

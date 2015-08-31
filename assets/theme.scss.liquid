@@ -385,7 +385,7 @@ $socialIconFontStack: 'icons';
   z-index: 1042;
   overflow: hidden;
   position: fixed;
-  background: #0b0b0b;
+  background: #414141;
   opacity: 0.8;
   filter: alpha(opacity=80); }
 
@@ -619,7 +619,7 @@ button::-moz-focus-inner {
 /* Main image in popup */
 img.mfp-img {
   width: auto;
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
   display: block;
   line-height: 0;
@@ -2627,7 +2627,7 @@ $slick-opacity-not-active: 0.25;
 /*================ Module | Product Lightbox ================*/
 
 .mfp-bg {
-  background-color: $colorBody;
+  /*background-color: $colorBody;*/
 
   &.mfp-fade {
     -webkit-backface-visibility: hidden;
@@ -3106,4 +3106,65 @@ button.mfp-arrow {
 }
 	
 
+/*================ page banner ==============*/
+.page-banner {
 
+	position: relative;
+	max-width: 100%;
+	margin-bottom:0px
+}
+
+.page-banner img {
+
+	max-width: 100%;
+}
+
+.page-banner h1 {
+	position: absolute;
+	bottom: 23%;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	font-weight: 300;
+	font-size: 2em;
+	line-height: 54px;
+	text-shadow: 2px 2px 5px #000000;
+	
+    @include at-query($min, $large) {
+      font-size: 3em;
+    }
+}
+	
+.page-banner h3 {
+	position: absolute;
+	bottom: 15%;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	font-weight: 300;
+	font-size: .75em;
+	line-height: 54px;
+	text-shadow: 2px 2px 5px #000000;
+	
+    @include at-query($min, $large) {
+      font-size: 1.17em;
+    }
+}
+	
+/*============== DIV popup content ===============*/
+
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 950px;
+  margin: 20px auto;
+}
+
+.white-popup p {
+  margin: 20px auto;
+  padding: 20px;
+}
