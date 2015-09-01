@@ -3152,6 +3152,24 @@ button.mfp-arrow {
       font-size: 1.17em;
     }
 }
+
+/*============== Resolve content ===============*/
+
+img.resolve {
+    padding-bottom: 10px;
+    display: block;
+    margin: 45px auto;
+    max-width: 100%; 
+	max-height: 100%;
+  	
+  }
+  
+  .resolve p {
+      padding-bottom: -10px;
+      display: block;
+      margin: 5px auto;
+  	
+    }
 	
 /*============== DIV popup content ===============*/
 
@@ -3168,3 +3186,30 @@ button.mfp-arrow {
   margin: 20px auto;
   padding: 20px;
 }
+
+.white-popup img {
+    padding-bottom: 10px;
+    display: block;
+    margin: 25px auto;
+    max-width: 100%; 
+	max-height: 100%;
+  	
+  }
+  
+  .white-popup img {
+     @include at-query($max, $medium) {
+      	padding-bottom: 10px;
+      	display: block;
+      	margin: 15px auto;
+      	max-width: 100%; 
+  		max-height: 100%;
+  		}
+    }
+
+	.white-popup hr {
+		margin:15px auto 15px auto;
+		border-width: 1px 0 0 0;
+		padding: 0px;
+		width: 50px;
+	
+	}
